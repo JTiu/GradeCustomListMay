@@ -105,7 +105,7 @@ namespace GradeCustomListMay
             }
             return -1;//-1 will indicate that there are no null postions to fill, array is full (ten)
         }
-        public bool Remove(T item) //does not return, so 'void'
+        public bool Remove(T item) //does not return, so 'void' #6: As a developer, I want the ability to remove an object from an instance of my custom-built list class by imitating the C# Remove() method.
         {
             int indexToRemove = FindItemIndex(item);//need to create a new method, as below, to check
             if (indexToRemove >= 0)//it >Equal finds the item, start the removal process using code below
@@ -136,10 +136,37 @@ namespace GradeCustomListMay
             }
             return -1;//if we reach this point, then item not found in the array.
         }
+        //#7 As a developer, I want to be able to override the ToString method that converts the contents of the custom list to a string.
+        public override string ToString()//need to create a string to hold the result
+        {
+            string result = string.Empty;//created empty string
+            foreach (var item in items)//run 'for loop' on item through items, adding everything to the string, adding all non-empty (not null), items to the 'result' of the ToString method
+            {
+                if(item != null)
+                {
+                    result += item.ToString();
+                }
+            }
+            return result;
+        }
+
+        //As a developer, I want to be able to overload the + operator, so that I can add two instances of the custom list class together.
+        //- List<int> one = new List<int>() {1,3,5}; and List<int> two = new List<int>() {2,4,6};
+        //- List<int> result = one + two;
+        //- result has 1,3,5,2,4,6
+        public static CustomList<T> operator + (CustomList<T> a, CustomList<T> b)       // overload the + operator,
+        {
+            for (int i = 0; i < b.Count; i++)
+            {
+                a.Add(b[i]);//adds all the items from b to a, return the new a as combined collection
+            }
+            return a;//new list, after combination a & b
+        
+        }
     }
+
 
     
 
-    // As a developer, I want the ability to remove an object from an instance of my custom-built list class by imitating the C# Remove() method.
 
 }
