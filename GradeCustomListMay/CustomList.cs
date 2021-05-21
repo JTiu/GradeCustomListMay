@@ -150,7 +150,7 @@ namespace GradeCustomListMay
             return result;
         }
 
-        //As a developer, I want to be able to overload the + operator, so that I can add two instances of the custom list class together.
+        //#8As a developer, I want to be able to overload the + operator, so that I can add two instances of the custom list class together.
         //- List<int> one = new List<int>() {1,3,5}; and List<int> two = new List<int>() {2,4,6};
         //- List<int> result = one + two;
         //- result has 1,3,5,2,4,6
@@ -162,6 +162,20 @@ namespace GradeCustomListMay
             }
             return a;//new list, after combination a & b
         
+        }
+        //  #8  As a developer, I want to be able to overload the – operator, so that I can subtract one instance of a custom list class from another instance of a custom list class.
+        //- List<int> one = new List<int>() { 1, 3, 5 }; and List<int> two = new List<int>() { 2, 1, 6 };
+        //- List<int> result = one - two;
+        //- result has 3,5
+        //using the template of the + operator above, modify to use the '-' operator, using a for loop to complete, and a return for the new a.list
+        public static CustomList<T> operator -(CustomList<T> a, CustomList<T> b)       // overload the - operator,
+        {
+            for (int i = 0; i < b.Count; i++)
+            {
+                a.Remove(b[i]);//subtracts all the items from b to a, return the new a as new, smaller collection
+            }
+            return a;//new list, after reduction of b from a
+
         }
     }
 
