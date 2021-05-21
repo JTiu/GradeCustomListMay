@@ -129,6 +129,11 @@ namespace GradeCustomListMay
         {
             for (int i = 0; i < items.Length; i++)
             {
+                //needed to correct this based on error revealed in unit test
+                if(items[i] == null)
+                {
+                    return -1;//may resolve failure in remove method unit test.
+                }
                 if (items[i].Equals(item))//check through the .Equals method to determine whether is something is equal, and if equal, proceed to next function, at the index
                 {
                     return i;
@@ -145,6 +150,7 @@ namespace GradeCustomListMay
                 if(item != null)
                 {
                     result += item.ToString();
+                    result += "\n";
                 }
             }
             return result;
