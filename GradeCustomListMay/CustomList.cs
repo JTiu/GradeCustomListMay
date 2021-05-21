@@ -32,11 +32,12 @@ namespace GradeCustomListMay
                     if (item != null)
                     {
                         count++;
+                       
                     }
                     else
                     {
                         return count;
-                    }
+                                           }
                 }
                 return count; //array is full. until anything is added, count is zero
 
@@ -150,7 +151,7 @@ namespace GradeCustomListMay
                 if(item != null)
                 {
                     result += item.ToString();
-                    result += "\n";
+                    result += "\nThis item goes to string: ";
                 }
             }
             return result;
