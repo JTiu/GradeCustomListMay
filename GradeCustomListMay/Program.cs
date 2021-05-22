@@ -55,11 +55,6 @@ namespace GradeCustomListMay
 
 
             Console.ReadLine();
-
-
-
-
-
         }
     }
 }
