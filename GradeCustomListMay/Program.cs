@@ -13,7 +13,7 @@ namespace GradeCustomListMay
 
             CustomList<string> listOfTowns = new CustomList<string>();
 
-            listOfTowns.Add("\nLas Cruces");
+            listOfTowns.Add("Las Cruces");
             listOfTowns.Add("Mesilla");
             listOfTowns.Add("Roswell");
             listOfTowns.Add("Albuquerque");
@@ -26,9 +26,9 @@ namespace GradeCustomListMay
             listOfTowns.Add("White Sands");
             listOfTowns.Add("Truth or Consequences");
             listOfTowns.Add("Cloudcroft");
-           
+            Console.WriteLine("Add 13 towns: 'listOfTowns.Add");
 
-            Console.WriteLine($"List of towns: {listOfTowns.ToString()}");
+            Console.WriteLine($"(From the Main) 'listOfTowns.ToString':\n {listOfTowns.ToString()}");
 
 
             string secondTown = listOfTowns[1];

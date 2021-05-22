@@ -15,7 +15,8 @@ namespace GradeCustomListMay
         public CustomList()
 
         {
-            items = new T[10]; //initializes the array with lenght of 10 items. meets user story#1 As a developer, I want to use a custom-built list class that stores its values in an array, so that I can store any data type in my collection.
+            items = new T[10]; //initializes the array with length of 10 items. Meets user story#1 
+            //As a developer, I want to use a custom-built list class that stores its values in an array, so that I can store any data type in my collection.
             //capacity is ten at this moment
         }
 
@@ -67,13 +68,15 @@ namespace GradeCustomListMay
         }
         //As a developer, I want the ability to add an object to an instance of my custom-built list class by imitating the C# Add() method.
 
-        public void Add(T item) //does not return, so 'void' because will always be able to add a new value by 3 step process to double the capacvity if array is full. Remove method will return a bool to indicate t/f if removal method is successful
-
+        public void Add(T item) //does not return, so 'void' because will always be able to add a new value by 3 step process to double the capacvity if array is full. 
+                                //Remove method will return a bool to indicate t/f if removal method is successful
         {
+         
             int findIndex = FindNullIndexToAdd(); //method to find next open position
             if (findIndex >= 0)
             {
                 items[findIndex] = item;
+               
             }
             else//if the array is full, i.e., -1
             {
