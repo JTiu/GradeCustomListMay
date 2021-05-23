@@ -33,12 +33,12 @@ namespace GradeCustomListMay
                     if (item != null)
                     {
                         count++;
-                       
+
                     }
                     else
                     {
                         return count;
-                                           }
+                    }
                 }
                 return count; //array is full. until anything is added, count is zero
 
@@ -71,12 +71,12 @@ namespace GradeCustomListMay
         public void Add(T item) //does not return, so 'void' because will always be able to add a new value by 3 step process to double the capacvity if array is full. 
                                 //Remove method will return a bool to indicate t/f if removal method is successful
         {
-         
+
             int findIndex = FindNullIndexToAdd(); //method to find next open position
             if (findIndex >= 0)
             {
                 items[findIndex] = item;
-               
+
             }
             else//if the array is full, i.e., -1
             {
@@ -114,7 +114,7 @@ namespace GradeCustomListMay
             int indexToRemove = FindItemIndex(item);//need to create a new method, as below, to check
             if (indexToRemove >= 0)//it >Equal finds the item, start the removal process using code below
             {
-                for (int i = indexToRemove; i < items.Length -1; i++)//
+                for (int i = indexToRemove; i < items.Length - 1; i++)//
                 {
                     items[i] = items[i + 1];//
                 }
@@ -126,7 +126,7 @@ namespace GradeCustomListMay
             {
                 return false;//if the item does not exist, return false
             }
-            
+
         }
 
         private int FindItemIndex(T item)
@@ -134,7 +134,7 @@ namespace GradeCustomListMay
             for (int i = 0; i < items.Length; i++)
             {
                 //needed to correct this based on error revealed in unit test
-                if(items[i] == null)
+                if (items[i] == null)
                 {
                     return -1;//may resolve failure in remove method unit test.
                 }
@@ -151,7 +151,7 @@ namespace GradeCustomListMay
             string result = string.Empty;//created empty string
             foreach (var item in items)//run 'for loop' on item through items, adding everything to the string, adding all non-empty (not null), items to the 'result' of the ToString method
             {
-                if(item != null)
+                if (item != null)
                 {
                     result += item.ToString();
                     result += "\nThis item goes to string: ";
@@ -164,14 +164,14 @@ namespace GradeCustomListMay
         //- List<int> one = new List<int>() {1,3,5}; and List<int> two = new List<int>() {2,4,6};
         //- List<int> result = one + two;
         //- result has 1,3,5,2,4,6
-        public static CustomList<T> operator + (CustomList<T> a, CustomList<T> b)       // overload the + operator,
+        public static CustomList<T> operator +(CustomList<T> a, CustomList<T> b)       // overload the + operator,
         {
             for (int i = 0; i < b.Count; i++)
             {
                 a.Add(b[i]);//adds all the items from b to a, return the new a as combined collection
             }
             return a;//new list, after combination a & b
-        
+
         }
         //  #8  As a developer, I want to be able to overload the – operator, so that I can subtract one instance of a custom list class from another instance of a custom list class.
         //- List<int> one = new List<int>() { 1, 3, 5 }; and List<int> two = new List<int>() { 2, 1, 6 };
@@ -188,9 +188,4 @@ namespace GradeCustomListMay
 
         }
     }
-
-
-    
-
-
 }

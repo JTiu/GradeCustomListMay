@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GradeCustomListMay
 {
-    class Program
+    class Program//copy of program, play with text
     {
         static void Main(string[] args)
         {
