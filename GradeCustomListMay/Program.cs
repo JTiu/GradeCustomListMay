@@ -33,6 +33,8 @@ namespace GradeCustomListMay
 
             string secondTown = listOfTowns[1];
             Console.WriteLine($"second town is: { secondTown}");
+            string thirdTown = listOfTowns[2];
+            Console.WriteLine($"third town is: { thirdTown}");
 
             listOfTowns.Remove(secondTown);
 
